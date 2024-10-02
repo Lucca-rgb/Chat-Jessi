@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9; /* Fundo claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa toda a altura da tela */
+}
+
+.chat-container {
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: white; /* Fundo branco */
+}
+
+.chat-header {
+    background-color: #f8c6d8; /* Rosa pastel */
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.chat-body {
+    background-color: white; /* Fundo branco */
+    padding: 10px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-response {
+    flex: 1;
+    overflow-y: auto; /* Adiciona rolagem */
+    background-color: #E0BBE4; /* Fundo roxo para as mensagens */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.chat-message {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 80%;
+}
+
+.chat-message.bot {
+    background-color: #E0E0E0; /* Fundo para mensagens do bot */
+    align-self: flex-start;
+}
+
+.chat-message.user {
+    background-color: #D6C6E0; /* Roxo suave para mensagens do usuário */
+    align-self: flex-end;
+}
+
+.chat-input-container {
+    display: flex;
+    margin-top: auto; /* Para posicionar na parte inferior */
+}
+
+.chat-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.send-button {
+    background-color: #f8c6d8; /* Rosa pastel */
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    color: white; /* Texto branco no botão */
+}
+
+.send-button:hover {
+    background-color: #d8a2b1; /* Cor do botão ao passar o mouse */
+}
