@@ -2,25 +2,35 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <!-- Makes the page responsive to different screen sizes (like mobile devices) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title of the page that appears in the browser tab -->
     <title>Chatbot Jessi</title>
+    <!-- Link to the external CSS file that will style the page -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
+    <!-- Main chat container -->
     <div class="chat-container" id="chat-container">
+        <!-- Chat header displaying the chatbot's name -->
         <div class="chat-header">Jessi</div>
+        <!-- Body of the chat where messages will appear -->
         <div class="chat-body" id="chat-body">
+            <!-- Area where the bot's response will be shown -->
             <div id="chat-response" class="chat-response">
+                <!-- Initial message from the bot -->
                 <div class="chat-message bot">Olá! Como posso ajudar você hoje? 😊</div>
             </div>
+            <!-- Container for the input field and send button -->
             <div class="chat-input-container">
+                <!-- Text input field where the user types their message -->
                 <input type="text" id="chat-input" placeholder="Digite sua mensagem..." class="chat-input">
+                <!-- Button to send the message -->
                 <button class="send-button" onclick="sendMessage()">Enviar</button>
             </div>
         </div>
     </div>
-
+    <!-- Includes the external JavaScript file that will control the chatbot interactions -->
     <script src="script.js"></script>
 </body>
 </html>
