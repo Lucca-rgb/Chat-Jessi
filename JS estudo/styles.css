@@ -1,83 +1,95 @@
+/* General body style, setting margin, font, and alignment */
 body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f9f9f9; /* Fundo claro */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    margin: 0; /* Removes the default margin */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern, clean font */
+    background-color: #f9f9f9; /* Light background color */
+    display: flex; /* Uses flexbox for alignment */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    height: 100vh; /* Makes the body take up the full height of the viewport */
 }
 
+/* Main chat container with rounded corners and shadow */
 .chat-container {
-    width: 400px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    background-color: white;
+    width: 400px; /* Fixed width for the chat container */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow to make it stand out */
+    overflow: hidden; /* Ensures no content spills outside the container */
+    background-color: white; /* White background */
 }
 
+/* Style for the chat header */
 .chat-header {
-    background-color: #f8c6d8;
-    color: white;
-    padding: 15px;
-    text-align: center;
-    font-weight: bold;
+    background-color: #f8c6d8; /* Soft pink background */
+    color: white; /* White text color */
+    padding: 15px; /* Internal padding */
+    text-align: center; /* Centers the text */
+    font-weight: bold; /* Makes the text bold */
 }
 
+/* Style for the chat body */
 .chat-body {
-    background-color: white;
-    padding: 10px;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
+    background-color: white; /* White background */
+    padding: 10px; /* Internal padding */
+    height: 400px; /* Fixed height for the chat body */
+    display: flex; /* Uses flexbox for layout */
+    flex-direction: column; /* Arranges elements vertically */
 }
 
+/* Area where the chat messages are displayed */
 .chat-response {
-    flex: 1;
-    overflow-y: auto; /* Adiciona rolagem */
-    background-color: #E0BBE4; /* Fundo roxo para as mensagens */
-    padding: 10px;
-    border-radius: 5px;
+    flex: 1; /* Takes up the available space */
+    overflow-y: auto; /* Adds vertical scrolling */
+    background-color: #E0BBE4; /* Light purple background for messages */
+    padding: 10px; /* Internal padding */
+    border-radius: 5px; /* Rounded corners */
 }
 
+/* Style for individual chat messages */
 .chat-message {
-    margin: 5px 0;
-    padding: 10px;
-    border-radius: 5px;
-    max-width: 80%;
+    margin: 5px 0; /* Margin between messages */
+    padding: 10px; /* Padding inside the message */
+    border-radius: 5px; /* Rounded corners for messages */
+    max-width: 80%; /* Limits the width of the messages to 80% of the container */
 }
 
+/* Style for bot's messages */
 .chat-message.bot {
-    background-color: #E0E0E0; /* Fundo para mensagens do bot */
-    align-self: flex-start;
+    background-color: #E0E0E0; /* Light gray background for bot messages */
+    align-self: flex-start; /* Aligns bot messages to the left */
 }
 
+/* Style for user's messages */
 .chat-message.user {
-    background-color: #D6C6E0; /* Roxo suave para mensagens do usuário */
-    align-self: flex-end;
+    background-color: #D6C6E0; /* Soft purple background for user messages */
+    align-self: flex-end; /* Aligns user messages to the right */
 }
 
+/* Container for the input field and send button */
 .chat-input-container {
-    display: flex;
-    margin-top: auto; /* Para posicionar na parte inferior */
+    display: flex; /* Flexbox for the layout */
+    margin-top: auto; /* Positions the input at the bottom */
 }
 
+/* Style for the input field */
 .chat-input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    flex: 1; /* Makes the input field take up the available space */
+    padding: 10px; /* Internal padding */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
 }
 
+/* Style for the send button */
 .send-button {
-    background-color: #f8c6d8; /* Rosa pastel */
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    cursor: pointer;
-    color: white; /* Texto branco no botão */
+    background-color: #f8c6d8; /* Pastel pink background */
+    border: none; /* Removes default border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Internal padding */
+    cursor: pointer; /* Changes the cursor to pointer when hovering */
+    color: white; /* White text color for the button */
 }
 
+/* Effect when the send button is hovered over */
 .send-button:hover {
-    background-color: #d8a2b1; /* Cor do botão ao passar o mouse */
+    background-color: #d8a2b1; /* Changes button color on hover */
 }
