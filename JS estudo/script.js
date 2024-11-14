@@ -1,4 +1,6 @@
+// Function to normalize the user's input and replace common words with expected terms
 function normalizeInput(input) {
+    // Dictionary of synonyms with common variations of words related to issues
     const synonyms = {
         "cadastrar": [
             "cadastro", "castro", "cadastra", "cadrastra", "cadstro", "cadrastr", "cadastar", "cadstrar", "cadastr", "cadatro"
@@ -35,35 +37,40 @@ function normalizeInput(input) {
         ]
     };
 
+    // Split the input into individual words
     let words = input.split(" ");
+    // For each word, try to normalize it to the expected main term (synonym)
     return words.map(word => {
         for (const key in synonyms) {
+            // If the user's word is a synonym, return the normalized word
             if (synonyms[key].includes(word)) {
-                return key; // Substitui pela palavra correta
+                return key; 
             }
         }
-        return word; // Retorna a palavra original se não houver substituição
-    }).join(" "); // Junta as palavras de volta em uma string
+        // If no synonym is found, return the original word
+        return word; 
+    }).join(" "); // Join the normalized words back into a single string
 }
 
+// Function that sends the message and generates the chatbot's response
 function sendMessage() {
-    const chatInput = document.getElementById('chat-input');
-    const issue = chatInput.value.trim().toLowerCase(); // Normaliza a entrada para minúsculas
-    const normalizedIssue = normalizeInput(issue); // Normaliza a entrada
-    const chatResponse = document.getElementById('chat-response');
+    const chatInput = document.getElementById('chat-input');  // Get the input field value
+    const issue = chatInput.value.trim().toLowerCase(); // Normalize the input to lowercase
+    const normalizedIssue = normalizeInput(issue); // Normalize the words to expected terms
+    const chatResponse = document.getElementById('chat-response'); // Get the area where the response will be shown
 
-    if (!normalizedIssue) return; // Não envia mensagens vazias
-
-    // Adiciona a mensagem do usuário
+     // If the input is empty, do not send anything
+    if (!normalizedIssue) return; 
+    // Create and add the user's message
     const userMessage = document.createElement('div');
     userMessage.classList.add('chat-message', 'user');
-    userMessage.textContent = issue;
+    userMessage.textContent = issue; // The original user message
     chatResponse.appendChild(userMessage);
-    chatInput.value = ''; // Limpa o campo de entrada
+    chatInput.value = ''; // Clear the input field after sending
 
-    // Resposta do bot
+    // Variable to store the bot's response text
     let responseText = '';
-
+    // Predefined responses based on the user's input
     if (normalizedIssue.includes('cadastrar') || normalizedIssue.includes('registrar')) {
         responseText = 'Para problemas de cadastro, por favor, verifique se você está utilizando o e-mail correto e se o formulário está preenchido corretamente. Se o problema persistir, entre em contato com o suporte técnico.';
     } else if (normalizedIssue.includes('preencher') || normalizedIssue.includes('feito') || normalizedIssue.includes('pronto')) {
@@ -94,7 +101,7 @@ function sendMessage() {
         responseText = 'Desculpe, não entendi. Pergunte sobre problemas de cadastro, problemas com senha, problemas de agendamento, menstruação, gravidez, saúde mental ou sintomas e eu vou tentar ajudar! 🤗';
     }
 
-    // Adiciona a resposta do bot
+    // Adds the bot's response to the chat
     const botMessage = document.createElement('div');
     botMessage.classList.add('chat-message', 'bot');
     botMessage.textContent = responseText;
