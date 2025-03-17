@@ -1,6 +1,6 @@
 # English Version
 
-## 🤖 Jessi Chat: Your Friendly Assistant!
+## 🤖 Jessi Chat: Your Friendly Assistant
 
 ### 🌟 New Features
 
