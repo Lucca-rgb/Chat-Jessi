@@ -1,4 +1,4 @@
-/ Function to normalize the user's input and replace common words with expected terms
+// Function to normalize the user's input and replace common words with expected terms
 function normalizeInput(input) {
     // Dictionary of synonyms with common variations of words related to issues
     const synonyms = {
